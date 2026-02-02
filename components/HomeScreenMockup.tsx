@@ -1,7 +1,7 @@
 
 import React from 'react';
-import TaskWidget from './TaskWidget';
-import { Task } from '../types';
+import TaskWidget from './TaskWidget.tsx';
+import { Task } from '../types.ts';
 
 interface HomeScreenMockupProps {
   tasks: Task[];
@@ -21,12 +21,9 @@ const HomeScreenMockup: React.FC<HomeScreenMockupProps> = ({ tasks, onToggleTask
 
   return (
     <div className="absolute inset-0 z-[200] overflow-hidden flex flex-col animate-in fade-in zoom-in-105 duration-500">
-      {/* Dynamic Wallpaper Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 scale-110 blur-xl opacity-80"></div>
       
-      {/* Content Layer */}
       <div className="relative flex-1 p-6 flex flex-col">
-        {/* Status Bar simulation */}
         <div className="h-6 w-full flex justify-between items-center text-white text-[10px] font-bold px-2 mb-8">
           <span>9:41</span>
           <div className="flex gap-1 items-center">
@@ -35,7 +32,6 @@ const HomeScreenMockup: React.FC<HomeScreenMockupProps> = ({ tasks, onToggleTask
           </div>
         </div>
 
-        {/* The Live Widget */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-2 px-2">
              <span className="text-[10px] font-bold text-white/60 uppercase tracking-widest">FocusFlow Widget</span>
@@ -43,7 +39,6 @@ const HomeScreenMockup: React.FC<HomeScreenMockupProps> = ({ tasks, onToggleTask
           <TaskWidget tasks={tasks} onToggleTask={onToggleTask} />
         </div>
 
-        {/* Simulated Icon Grid */}
         <div className="grid grid-cols-4 gap-y-6 gap-x-4 px-2">
           {dummyIcons.map((icon, i) => (
             <div key={i} className="flex flex-col items-center gap-1">
@@ -53,7 +48,6 @@ const HomeScreenMockup: React.FC<HomeScreenMockupProps> = ({ tasks, onToggleTask
               <span className="text-[10px] font-medium text-white shadow-sm">{icon.name}</span>
             </div>
           ))}
-          {/* App itself icon */}
           <button 
             onClick={onClose}
             className="flex flex-col items-center gap-1 group"
@@ -67,7 +61,6 @@ const HomeScreenMockup: React.FC<HomeScreenMockupProps> = ({ tasks, onToggleTask
           </button>
         </div>
 
-        {/* Dock Area */}
         <div className="mt-auto mb-4 bg-white/20 ios-blur rounded-[2.5rem] p-4 flex justify-around items-center">
             <div className="w-14 h-14 bg-green-500 rounded-[1.2rem] shadow-lg flex items-center justify-center text-2xl">📞</div>
             <div className="w-14 h-14 bg-white rounded-[1.2rem] shadow-lg flex items-center justify-center text-2xl">💬</div>
@@ -75,11 +68,9 @@ const HomeScreenMockup: React.FC<HomeScreenMockupProps> = ({ tasks, onToggleTask
             <div className="w-14 h-14 bg-gradient-to-b from-gray-100 to-gray-300 rounded-[1.2rem] shadow-lg flex items-center justify-center text-2xl">⚙️</div>
         </div>
 
-        {/* Home Indicator */}
         <div className="w-32 h-1 bg-white/40 rounded-full self-center mb-2"></div>
       </div>
 
-      {/* Floating Close Instructions */}
       <button 
         onClick={onClose}
         className="absolute top-12 left-1/2 -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-full text-xs font-bold ios-blur border border-white/20 active:scale-95 transition-transform"

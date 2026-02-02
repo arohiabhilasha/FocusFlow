@@ -56,6 +56,11 @@
     @keyframes spin { to { transform: rotate(360deg); } }
   </style>
   
+  <script>
+    // Shim for environments where process.env is not defined globally
+    window.process = window.process || { env: { API_KEY: "" } };
+  </script>
+
   <script type="importmap">
 {
   "imports": {
@@ -77,9 +82,7 @@
 
   <div id="root"></div>
 
-  <!-- The transpiler script -->
   <script type="module" src="https://esm.sh/run"></script>
-  <!-- The actual app entry point -->
   <script type="text/babel" src="index.tsx"></script>
   
   <script type="module">
@@ -100,7 +103,7 @@
         loader.style.opacity = '0';
         setTimeout(() => loader.remove(), 500);
       }
-    }, 8000);
+    }, 10000);
   </script>
 </body>
 </html>

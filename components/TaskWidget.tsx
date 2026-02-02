@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Task } from '../types';
+import { Task } from '../types.ts';
 
 interface TaskWidgetProps {
   tasks: Task[];
@@ -8,9 +8,7 @@ interface TaskWidgetProps {
 }
 
 const TaskWidget: React.FC<TaskWidgetProps> = ({ tasks, onToggleTask }) => {
-  // Only show first 5 uncompleted tasks in the immediate view, 
-  // but we allow scrolling if more are present or if the screen is small.
-  const topTasks = tasks.filter(t => !t.completed).slice(0, 10); // Show up to 10 in the list but user asked for 5 visible
+  const topTasks = tasks.filter(t => !t.completed).slice(0, 10);
 
   return (
     <div className="bg-white/80 ios-blur widget-shadow rounded-[2rem] p-4 w-full aspect-square md:aspect-auto md:h-80 flex flex-col border border-white/40">
@@ -56,7 +54,6 @@ const TaskWidget: React.FC<TaskWidgetProps> = ({ tasks, onToggleTask }) => {
           </div>
         )}
 
-        {/* Dynamic Placeholder for 'Next' if less than 5 */}
         {topTasks.length > 0 && topTasks.length < 5 && Array.from({ length: 5 - topTasks.length }).map((_, i) => (
           <div key={`empty-${i}`} className="w-full h-[42px] bg-gray-50/30 rounded-xl border border-dashed border-gray-200/50"></div>
         ))}
