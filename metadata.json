@@ -1,0 +1,8 @@
+{
+  "name": "FocusFlow - iOS Style Task Widget",
+  "description": "A high-fidelity iOS-inspired task management app featuring a dynamic 'Next 5' widget that automatically refreshes as you complete goals. Includes AI-powered goal suggestions to help you stay productive.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
