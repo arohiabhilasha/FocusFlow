@@ -3,7 +3,7 @@
   "name": "FocusFlow",
   "short_name": "FocusFlow",
   "description": "Daily goal tracker with iOS-style widget.",
-  "start_url": "/?mode=widget",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#f2f2f7",
   "theme_color": "#2563eb",
